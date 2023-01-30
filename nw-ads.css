@@ -1,0 +1,65 @@
+body {
+  max-width: 900px;
+  margin   : auto;
+}
+
+a.self::before {  content: attr(href); }
+
+code        { white-space: pre; }
+code.pseudo { font-style: italic; }
+
+img   { background-color: white; }
+
+.back-side { float: right; }
+
+
+li>h1 { display: inline; padding: 8px;}
+li>h2 { display: inline; padding: 7px;}
+li>h3 { display: inline; padding: 6px;}
+li>h4 { display: inline; padding: 5px;}
+
+ol.page, ol#toc, ol#toc ol, ol.id {
+  counter-reset: item;
+  list-style-type: none;
+}
+
+ol.page, ol.noindent { padding: 0; }
+
+ol.page>li, ol#toc li { counter-increment: item; }
+ol.page>li            { padding-top: 5px; }
+ol.page>li::before,
+ol#toc li::before     { content: counters(item, '.') '  '; }
+li.no-num,
+ol#toc li.no-num      { counter-increment: none; }
+ol#toc li.no-num::before  { content: none; }
+ol.id>li::before      { content: attr(id) ' '; }
+ol>li.link::before    { content: '[' counters(item, '.') ']'; }
+
+.note { font-style: italic; }
+
+.newpage { page-break-after: always; padding: 60px; }
+
+td { padding-right: 8px; vertical-align: top; padding-left: 8px;}
+th { text-align: center;}
+
+caption { caption-side: bottom; }
+
+details.note>summary { font-size: 0.9em; }
+
+td>table, td>table td, td>table th {
+  border: 1px solid;
+}
+
+table { border-collapse: collapse; }
+
+table#Fig1_2 td { border: 1px solid; width: 100px;}
+table#Fig1_2 th { width: 30px;}
+
+@media (prefers-color-scheme: dark) {
+  body                { background-color: #333; color: #DDD; }
+  a                   { color: #EEE; }
+}
+
+@media (prefers-color-scheme: light) {
+  a                   { color: #000; }
+}

@@ -1,12 +1,23 @@
+html { background-color: #606060; }
+
 body {
-  max-width: 900px;
+  max-width: 680px;
   margin   : auto;
+  background-color: white;
+  padding: 0 40px 40px 40px;
 }
+
+p { text-align: justify; }
+
+img, svg { max-width: 100%; height: auto; }
+pre, div.table { max-width: 100%; overflow-x: auto; font-size: 0.98em; }
 
 a.self::before {  content: attr(href); }
 
 code        { white-space: pre; }
+code.large  { max-width: 100%; overflow-x: auto; font-size: 0.98em; display: block;}
 code.pseudo { font-style: italic; }
+code.long   { font-size: 0.96em; }
 
 img   { background-color: white; }
 
@@ -62,4 +73,15 @@ table#Fig1_2 th { width: 30px;}
 
 @media (prefers-color-scheme: light) {
   a                   { color: #000; }
+}
+
+@media (max-width: 600px) {
+  body { padding  : 0 20px 20px 20px; }
+}
+@media (max-width: 500px) {
+  body { padding  : 0 10px 10px 10px; }
+}
+@media (max-width: 400px) {
+  body {margin: 0; padding: 0 5px 5px 5px;}
+  p { hyphens: auto; }
 }
